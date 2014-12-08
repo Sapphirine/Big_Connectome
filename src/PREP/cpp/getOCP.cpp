@@ -1,4 +1,4 @@
-// g++ -O3 geturl.cpp -o geturl -lcurl
+// g++ -O3 getOCP.cpp -o getKasthuri11 -lcurl
 #include <curl/curl.h>
 #include <fstream>
 #include <sstream>
