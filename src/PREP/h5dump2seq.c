@@ -107,7 +107,7 @@ int main(int argc, char *argv[])
 	  fprintf(stderr, "Unable to open %s.\n", fn);
 	  exit(1);
 	}
-	fprintf(outfile, "P2\n%d %d\n255\n", xblk_size, yblk_size);
+	fprintf(outfile, "P2\n%d %d\n255", xblk_size, yblk_size);
       }
       fprintf(outfile, "\n");
     }
