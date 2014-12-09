@@ -380,8 +380,8 @@
             <!-- /.row -->
             <div class="row">
 
+		<form id="form-inline" method='post' action='../PHP/send_email.php'>
 	      <div class="well span9">
-		<form id="form-inline" method='post' action='../send_email.php'>
 		  <fieldset>
 		    <legend>Input Voxel Kasthuri11</legend>
 		    <div class="col-md-2">
@@ -409,8 +409,7 @@
 		      <input type="text" class="form-control" id="endz">
 		    </div>
 		  </fieldset>
-		</form>
-	      </div>
+</div>
 
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
@@ -425,13 +424,13 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                        <input type='submit' value='Bound Area' name='crop'></input>
+                                <span class="pull-left">
+				</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -501,6 +500,7 @@
                     </div>
                 </div>
             </div>
+		</form>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-8">
