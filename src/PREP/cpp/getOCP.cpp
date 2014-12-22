@@ -25,13 +25,15 @@ static size_t data_write(void* buf, size_t size, size_t nmemb, void* userp)
 /**
  * timeout is in seconds
  **/
-CURLcode curl_read(const std::string& url, std::ostream& os, long timeout = 30)
+CURLcode curl_read(const std::string& url, std::ostream& os, long timeout)
 {
 	CURLcode code(CURLE_FAILED_INIT);
 	CURL* curl = curl_easy_init();
 
 	if(curl)
 	{
+	  cout << "Download timeout: "<<timeout<<endl;
+
 		if(CURLE_OK == (code = curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, &data_write))
 		&& CURLE_OK == (code = curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 1L))
 		&& CURLE_OK == (code = curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L))
@@ -49,7 +51,8 @@ CURLcode curl_read(const std::string& url, std::ostream& os, long timeout = 30)
 int main(int argc, char *argv[])
 {
 	curl_global_init(CURL_GLOBAL_ALL);
-	string myRestUrl = "http://openconnecto.me/ocp/ca/kasthuri11/hdf5/1/4000,4800/4000,4800/1600,1700/";
+	char myRestUrl[1000];
+	// = "http://openconnecto.me/ocp/ca/kasthuri11/hdf5/1/4000,4800/4000,4800/1600,1700/";
 
 	if(argc < 8){
 	  fprintf(stderr, "Need more parameters.\nUsage: start-x end-x start-y end-y start-z end-z out-filename\n");
@@ -58,10 +61,14 @@ int main(int argc, char *argv[])
 
 	std::ofstream ofs(argv[7]);
 	
-	sscanf(myRestUrl.c_str(),"http://openconnecto.me/ocp/ca/kasthuri11/hdf5/1/%s,%s/%s,%s/%s,%s/", 
+	sprintf(myRestUrl,"http://openconnecto.me/ocp/ca/kasthuri11/hdf5/1/%s,%s/%s,%s/%s,%s/", 
 	       argv[1],argv[2],argv[3],argv[4],argv[5],argv[6]);
+
+	cout<<"Url: "<<myRestUrl<<endl;
+
 	//if(CURLE_OK == curl_read("http://openconnecto.me/ocp/ca/kasthuri11/hdf5/1/4000,4800/4000,4800/1600,1700/", ofs))
-	if(CURLE_OK == curl_read(myRestUrl.c_str(), ofs))
+
+	if(CURLE_OK == curl_read(myRestUrl, ofs, 120))
 	{
 		// Web page successfully written to file
 	}
