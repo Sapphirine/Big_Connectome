@@ -1,0 +1,29 @@
+Ganita Brain is software for implementing 
+a myriad of algorithms and services 
+on electron microscopy brain scans. 
+Initial development is an outgrowth 
+of a course at Columbia University: 
+E6893: Big Data Analytics. 
+Project name: Brain Edge Detection. 
+
+Thanks go to Professor Ching-Yung Lin 
+and his Graduate Teaching Assistants!!!
+
+Required libraries include: 
+h5dump, hdf5 libraries, libcurl 
+and the standard Linux LAMP packages. 
+Also, it is helpful to have the latest 
+ffmpeg, libogg, libtheora, x264 and opencv installed. 
+Also, it is required that opencv link with ffmpeg 
+libraries and the plug-in codecs mentioned above. 
+
+To build from source code:
+
+cd to root directory or parent directory of src/ directory. 
+Enter the command: 
+sh build/build.sh
+
+If all dependencies are met, then bin/ directory 
+will be created with executables and jar files. 
+
+Thank you!!!
