@@ -25,3 +25,8 @@ SERVICE, PREP, FEAT, GRAPH.
 Enter the command: 
 sh ./build.sh
 
+This command will compile executables and build jar files in-place. 
+To build bin directory, go up one directory and enter the command: 
+sh ./build.sh
+
+Thank you!!!
