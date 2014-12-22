@@ -35,7 +35,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    
 </head>
 
 <body>
@@ -373,43 +373,45 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
+                    <h1 class="page-header">Brain Edge Detection</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
 
-		<form id="form-inline" method='post' action='../PHP/send_email.php'>
+		<form id="form-inline" method='post' action='../PHP/em_proc.php'>
 	      <div class="well span9">
 		  <fieldset>
-		    <legend>Input Voxel Kasthuri11</legend>
+		    <legend>Kasthuri11 EM Data</legend>
 		    <div class="col-md-2">
 		      <label for="startx">Starting X</label>
-		      <input type="text" class="form-control" id="startx">
+		      <input type="text" class="form-control" name='startx'>
 		    </div>
 		    <div class="col-md-2">
 		      <label for="endx">Ending X</label>
-		      <input type="text" class="form-control" id="endx">
+		      <input type="text" class="form-control" name='endx'>
 		    </div>
 		    <div class="col-md-2">
 		      <label for="starty">Starting Y</label>
-		      <input type="text" class="form-control" id="starty">
+		      <input type="text" class="form-control" name='starty'>
 		    </div>
 		    <div class="col-md-2">
 		      <label for="endy">Ending Y</label>
-		      <input type="text" class="form-control" id="endy">
+		      <input type="text" class="form-control" name='endy'>
 		    </div>
 		    <div class="col-md-2">
-		      <label for="startz">Starting Z</label>
-		      <input type="text" class="form-control" id="startz">
-		    </div>
-		    <div class="col-md-2">
-		      <label for="endz">Ending Z</label>
-		      <input type="text" class="form-control" id="endz">
+		      <label for="starty">Z Slices</label>
+		      <select class="form-control">
+			<option value="one">0-99</option>
+			<option value="two">100-199</option>
+			<option value="three">200-299</option>
+			<option value="four">300-399</option>
+			<option value="five">400-499</option>
+		      </select>
 		    </div>
 		  </fieldset>
-</div>
+	      </div>
 
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
@@ -420,12 +422,12 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">26</div>
-                                    <div>Crop Voxel</div>
+                                    <div>Bound 3D Voxels</div>
                                 </div>
                             </div>
                         </div>
                             <div class="panel-footer">
-                        <input type='submit' value='Bound Area' name='crop'></input>
+                        <input type='submit' value='         Crop        ' name='crop'></input>
                                 <span class="pull-left">
 				</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -438,17 +440,18 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
+                                    <i class="fa fa-cloud-download fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">12</div>
-                                    <div>New Tasks!</div>
+                                    <div>Extract to Cloud Ganita</div>
                                 </div>
                             </div>
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                              <input type='submit' value='     Download     ' name='download'></input>
+                                <span class="pull-left"></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -460,17 +463,18 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                    <i class="fa fa-caret-square-o-right fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">124</div>
-                                    <div>New Orders!</div>
+                                    <div>Process EM Voxels</div>
                                 </div>
                             </div>
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                              <input type='submit' value='      Process      ' name='download'></input>
+                              <span class="pull-left"></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -482,17 +486,18 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-support fa-5x"></i>
+                                    <i class="fa fa-eye fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">13</div>
-                                    <div>Support Tickets!</div>
+                                    <div>Review Results</div>
                                 </div>
                             </div>
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                               <input type='submit' value='      Review      ' name='download'></input>
+                               <span class="pull-left"></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>

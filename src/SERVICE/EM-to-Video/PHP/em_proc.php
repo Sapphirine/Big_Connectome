@@ -2,45 +2,20 @@
 <body>
 
 <?php
-if (isset($_REQUEST['startx']))
-  //if "email" is filled out, send email
-  {
-    if($_REQUEST['email'] != ""){
-      //send email
-      $email = $_REQUEST['email'] ;
-      $subject = $_REQUEST['subject'] ;
-      $message = $_REQUEST['message'] ;
-      mail("terry@ganita.org", $subject,
-	   $message, "From:" . $email);
-      echo "<h2>Thank you for sending your email.</h2>";
-      echo '<a href="http://www.ganita.org">Go Back to Ganita</a>';
-    }
-    else
-      //if "email" is not filled out, display the form
-      {
-	echo "<h1>Please fill out email form and click send to send email.</h1>";
-	echo "<form method='post' action='send_email.php'>
-  Your Email: <input name='email' type='text' /><br />
-  Subject: <input name='subject' type='text' /><br />
-  Message:<br />
-  <textarea name='message' rows='15' cols='40'>
-  </textarea><br />
-  <input type='submit' value='Send' />
-  </form>";
-      }
+if($_REQUEST['startx'] >= 0){
+      //download data
+      $startx = $_REQUEST['startx'] ;
+      $endx = $_REQUEST['endx'] ;
+      $starty = $_REQUEST['starty'] ;
+      $endy = $_REQUEST['endy'] ;
+
+   //exec('echo '.$startx." > tmp.txt");
+   //exec('echo '."here > tmp.txt");
+   exec('/bin/sh '."/var/www/html/GanitaBrain/PHP/hadoop-stream-ocp.sh ".$startx." ".$endx." ".$starty." ".$endy." >> stream-logs");
   }
  else
-   //if "email" is not filled out, display the form
    {
-     echo "<h1>Please fill out email form and click send to send email.</h1>";
-     echo "<form method='post' action='send_email.php'>
-  Your Email: <input name='email' type='text' /><br />
-  Subject: <input name='subject' type='text' /><br />
-  Message:<br />
-  <textarea name='message' rows='15' cols='40'>
-  </textarea><br />
-  <input type='submit' value='Send' />
-  </form>";
+     echo "<h1>Please fill out entire form and click button.</h1>";
    }
 
 ?>
