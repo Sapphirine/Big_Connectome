@@ -1,10 +1,14 @@
-Ganita Brain is software for implementing 
+e6895-connectome is software for implementing 
 a myriad of algorithms and services 
 on electron microscopy brain scans. 
-Initial development is an outgrowth 
-of a course at Columbia University: 
-E6893: Big Data Analytics. 
-Project name: Brain Edge Detection. 
+It was written initially as a final 
+project for 
+
+E6895: Advanced Big Data Analytics
+
+a course at Columbia University. 
+The software was started during 
+Big Data Analytics. 
 
 Thanks go to Professor Ching-Yung Lin 
 and his Graduate Teaching Assistants. 
