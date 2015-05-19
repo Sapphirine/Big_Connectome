@@ -1,15 +1,19 @@
-Ganita Brain is software for implementing 
-a myriad of algorithms and services 
-on electron microscopy brain scans. 
+Big Connectome/Ganita Brain is software 
+for implementing a myriad of algorithms 
+and services on electron microscopy brain scans. 
 Initial development is an outgrowth 
 of a course at Columbia University: 
-E6893: Big Data Analytics. 
-Project name: Brain Edge Detection. 
+E6893: Big Data Analytics and 
+E6895: Advanced Big Data Analytics. 
+Project name: Big Connectome.
 
 Thanks go to Professor Ching-Yung Lin 
 and his Graduate Teaching Assistants!!!
 
 Required libraries include: 
+Now caffe and all its dependencies 
+are required. 
+
 h5dump, hdf5 libraries, libcurl 
 and the standard Linux LAMP packages. 
 Also, it is helpful to have the latest 
